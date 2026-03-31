@@ -60,11 +60,17 @@ Admin marks payment as paid → user sees payout in dashboard
 
 ## 📸 Screenshots
 
-| Dashboard | Monthly Draws | Winnings |
-|---|---|---|
-| ![Dashboard](./screenshots/dashboard.png) | ![Draws](./screenshots/draws.png) | ![Winnings](./screenshots/winnings.png) |
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
 
-> _Add screenshots to a `/screenshots` folder at the project root._
+### Monthly Draws
+![Draws](./screenshots/draws.png)
+
+### Winnings
+![Winnings](./screenshots/winnings.png)
+
+### Charity Selection
+![Charity](./screenshots/charity.png)
 
 ---
 
