@@ -4,9 +4,10 @@ import { publishDraw } from '@/lib/services/draws';
 
 export async function POST(
   _req: Request,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await context.params;
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -21,7 +22,7 @@ export async function POST(
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
-    const result = await publishDraw(supabase, params.id);
+    const result = await publishDraw(supabase, id);
 
     if (!result.success) {
       return NextResponse.json({ error: result.error }, { status: 400 });
